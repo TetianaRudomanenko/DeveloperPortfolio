@@ -78,6 +78,26 @@ header nav ul li a {
   text-decoration: none;
 }
 
+.hamburger {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  border: black solid 1px;
+  background: white;
+  cursor: pointer;
+  display: none;
+}
+
+.closeIcon {
+  display: none;
+}
+
+.showMenu {
+  transform: translateY(0);
+}
+
 .social-media-link {
   display: flex;
   gap: 20px;
@@ -98,7 +118,7 @@ header nav ul li a {
 }
 
 h1 {
-  color: var(--Solid-Heading, #42446e);
+  color: #42446e;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -109,10 +129,7 @@ h1 {
 }
 
 h1 span {
-  background: var(
-    --Gradient-Heading,
-    linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%)
-  );
+  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -148,7 +165,7 @@ h1 span {
 }
 
 .about-me-block-description p {
-  color: var(--dark-content, #666);
+  color: #666;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -180,7 +197,7 @@ h1 span {
 }
 
 .experience-box_upper-part_title {
-  color: var(--dark-content, #666);
+  color: #666;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -193,7 +210,7 @@ h1 span {
   width: 84px;
   height: 24px;
   flex-shrink: 0;
-  color: var(--Button-text, #018c0f);
+  color: #018c0f;
   background-color: #d7ffe0;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -232,7 +249,7 @@ h1 span {
 }
 
 .experience-box_lower-part span {
-  color: var(--light-Content, #a7a7a7);
+  color: #a7a7a7;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
@@ -252,7 +269,7 @@ h1 span {
 }
 
 .experience-box_line-part_specifications {
-  background: var(--colors-grey, #ebeaed);
+  background: #ebeaed;
   border: 0;
   height: 2px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -288,7 +305,7 @@ h1 span {
   width: 100%;
   margin-top: 50px;
   font-family: "Poppins", sans-serif;
-  color: var(--dark-content, #666);
+  color: #666;
   text-align: center;
   font-size: 32px;
   font-style: normal;
@@ -303,6 +320,11 @@ h1 span {
   gap: 100px;
   list-style: none;
   margin-top: 140px;
+}
+
+.tech-stack-block_icons img {
+  width: 110px;
+  height: 110px;
 }
 
 .projects-block_list {
@@ -343,7 +365,7 @@ h3 {
 }
 
 .projects-block_list_item_project-description {
-  color: var(--dark-content, #666);
+  color: #666;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -356,7 +378,7 @@ h3 {
 }
 
 .projects-block_list_item_project-technologies {
-  color: var(--Solid-Heading, #42446e);
+  color: #42446e;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -368,7 +390,7 @@ h3 {
 }
 
 .projects-block_list_item_project-technologies span {
-  color: var(--Solid-Heading, #42446e);
+  color: #42446e;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -417,7 +439,7 @@ h3 {
 }
 
 .mail-us-block_content_text {
-  color: var(--colors-heading, #1e0e62);
+  color: #1e0e62;
   text-align: center;
   font-family: "DM Sans", sans-serif;
   font-size: 58px;
@@ -428,10 +450,7 @@ h3 {
 }
 
 .mail-us-block_content_text a {
-  background: var(
-    --Gradient-Heading,
-    linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%)
-  );
+  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -467,7 +486,7 @@ address {
 
 .contact-information-block_phone-email a {
   font-family: "DM Sans", sans-serif;
-  color: var(--Solid-Heading, #42446e);
+  color: #42446e;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -497,7 +516,7 @@ address {
   height: 5.682px;
   flex-shrink: 0;
   stroke-width: 2px;
-  stroke: var(--dark-content, #666);
+  stroke: #666;
   opacity: 0.3;
   margin-top: 20px;
 }
@@ -521,7 +540,7 @@ address {
 }
 
 .footer-menu-block nav ul li a {
-  color: var(--Solid-Heading, #42446e);
+  color: #42446e;
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -531,7 +550,7 @@ address {
 }
 
 .footer-menu-block_authorship_information {
-  color: var(--dark-content, #666);
+  color: #666;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
@@ -542,10 +561,7 @@ address {
 }
 
 .footer-menu-block_authorship_information span {
-  background: var(
-    --Gradient-Heading,
-    linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%)
-  );
+  background: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -595,11 +611,99 @@ address {
   footer {
     margin-top: 100px;
   }
+
+  .footer-img {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 992px) {
-  .logo {
+  .container.header_flex {
+    justify-content: flex-start;
+  }
+
+  header {
+    position: fixed;
+    background: #f0f0f0;
+    top: 0;
+  }
+
+  .header-logo {
+    margin-left: 20px;
+  }
+
+  main {
+    padding-top: 120px;
+  }
+
+  .menu {
     display: none;
+  }
+
+  .menu.showMenu {
+    display: block;
+  }
+
+  .menuItem {
+    display: block;
+    margin: 2rem 4rem;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .menuItem:hover {
+    text-decoration: underline;
+  }
+
+  .hamburger {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    top: 30px;
+    right: 30px;
+    padding: 4px;
+    border: #42446e solid 1px;
+    background: white;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  .closeIcon {
+    display: none;
+  }
+
+  .menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #666;
+    color: white;
+    list-style: none;
+    padding-top: 4rem;
+  }
+
+  .showMenu {
+    transform: translateY(0);
+  }
+
+  .material-icons {
+    font-size: 46px;
+    background: white;
+    color: #42446e;
+  }
+
+  header nav ul {
+    flex-direction: column;
+  }
+
+  h1 {
+    text-align: center;
   }
 
   .social-media-link {
@@ -616,9 +720,6 @@ address {
     row-gap: 20px;
   }
 
-  h1 {
-  }
-
   .about-me-block,
   .work-experience-block,
   .education-block {
@@ -630,7 +731,17 @@ address {
     justify-content: center;
   }
 
+  .footer-menu-block_authorship_information {
+    margin-top: 45px;
+  }
+}
+
+@media only screen and (max-width: 1145px) {
   .footer-menu-block {
     justify-content: center;
+  }
+
+  .footer-menu-block_wrapper {
+    margin-right: 60px;
   }
 }
