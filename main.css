@@ -5,9 +5,28 @@
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
   font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
+  background-color: var(--bg-color);
+}
+
+:root {
+  --font-color: #42446e;
+  --bg-color: #ffffff;
+  --footer-color: #42446e;
+  --text-color: #666;
+  --project-svg-color: #000;
+  --project-item-bg: #fff;
+  --project-item-title: #000;
+}
+
+[data-theme="dark"] {
+  --font-color: #d9d9d9;
+  --bg-color: #191919;
+  --footer-color: #a7a7a7;
+  --text-color: #a7a7a7;
+  --project-svg-color: #ffffff;
+  --project-item-bg: #363636;
+  --project-item-title: #ccc;
 }
 
 .main-container {
@@ -15,6 +34,7 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
 }
 
 header {
@@ -22,15 +42,18 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  top: 40px;
-  left: 0;
   right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  z-index: 200;
+  padding: 0 20px;
 }
 
 .container {
   margin: 0 auto;
-  width: 1600px;
+  width: 1240px;
   display: flex;
   justify-content: center;
 }
@@ -40,6 +63,10 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
@@ -68,7 +95,7 @@ header nav ul {
 }
 
 header nav ul li a {
-  color: #666666;
+  color: var(--text-color);
   font-family: "DM Sans", sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -104,9 +131,13 @@ header nav ul li a {
   align-items: center;
 }
 
-.social-media-link a img {
+.social-media-link svg {
   width: 30px;
   height: 30px;
+}
+
+.social-media-link svg path {
+  fill: var(--text-color);
 }
 
 .main-information {
@@ -117,10 +148,65 @@ header nav ul li a {
   align-items: center;
 }
 
+.switch {
+  height: 100px;
+  top: 130px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  width: 60px;
+  position: absolute;
+  top: 30px;
+  right: 0px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #2b2b2b;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 h1 {
-  color: #42446e;
+  color: var(--font-color);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-size: 58px;
   line-height: 70px;
@@ -151,8 +237,7 @@ h1 span {
 }
 
 .section-title-type1 {
-  color: #42446e;
-  font-family: "Poppins", sans-serif;
+  color: var(--font-color);
   font-size: 42px;
   font-style: normal;
   font-weight: 700;
@@ -165,8 +250,7 @@ h1 span {
 }
 
 .about-me-block-description p {
-  color: #666;
-  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -197,8 +281,7 @@ h1 span {
 }
 
 .experience-box_upper-part_title {
-  color: #666;
-  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -213,7 +296,6 @@ h1 span {
   color: #018c0f;
   background-color: #d7ffe0;
   text-align: center;
-  font-family: "Poppins", sans-serif;
   font-size: 9px;
   font-style: normal;
   font-weight: 600;
@@ -250,7 +332,6 @@ h1 span {
 
 .experience-box_lower-part span {
   color: #a7a7a7;
-  font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -291,9 +372,8 @@ h1 span {
 .section-title-type2 {
   height: 26px;
   width: 100%;
-  color: #42446e;
+  color: var(--font-color);
   text-align: center;
-  font-family: "Poppins", sans-serif;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
@@ -304,8 +384,7 @@ h1 span {
   height: 26px;
   width: 100%;
   margin-top: 50px;
-  font-family: "Poppins", sans-serif;
-  color: #666;
+  color: var(--text-color);
   text-align: center;
   font-size: 32px;
   font-style: normal;
@@ -322,9 +401,15 @@ h1 span {
   margin-top: 140px;
 }
 
-.tech-stack-block_icons img {
+.tech-stack-block_icons img,
+.tech-stack-block_icons svg {
   width: 110px;
   height: 110px;
+}
+
+.tech-stack-block_icons svg path,
+.projects-block_list_item_link-bar svg path {
+  fill: var(--project-svg-color);
 }
 
 .projects-block_list {
@@ -343,20 +428,19 @@ h1 span {
   width: 100%;
   flex-shrink: 0;
   border-radius: 20px;
-  background: #fff;
+  background: var(--project-item-bg);
   box-shadow: 2px 2px 100px 0px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
 }
 
 h3 {
-  color: #000;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
+  color: var(--project-item-title);
   font-size: 28px;
   font-style: normal;
   font-weight: 500;
   line-height: 26px;
   margin-top: 27px;
+  margin-left: 28px;
 }
 
 .projects-block_list_item img {
@@ -365,8 +449,7 @@ h3 {
 }
 
 .projects-block_list_item_project-description {
-  color: #666;
-  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
@@ -378,8 +461,7 @@ h3 {
 }
 
 .projects-block_list_item_project-technologies {
-  color: #42446e;
-  font-family: "Poppins", sans-serif;
+  color: var(--font-color);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -390,8 +472,6 @@ h3 {
 }
 
 .projects-block_list_item_project-technologies span {
-  color: #42446e;
-  font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -411,15 +491,14 @@ h3 {
   gap: 10px;
 }
 
-.projects-block_list_item_link-bar img {
+.projects-block_list_item_link-bar svg {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
 }
 
 .projects-block_list_item_link-bar div a {
-  color: #000;
-  font-family: "Poppins", sans-serif;
+  color: var(--project-svg-color);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -439,7 +518,7 @@ h3 {
 }
 
 .mail-us-block_content_text {
-  color: #1e0e62;
+  color: var(--font-color);
   text-align: center;
   font-family: "DM Sans", sans-serif;
   font-size: 58px;
@@ -486,7 +565,7 @@ address {
 
 .contact-information-block_phone-email a {
   font-family: "DM Sans", sans-serif;
-  color: #42446e;
+  color: var(--footer-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -505,6 +584,16 @@ address {
   align-items: center;
 }
 
+.contact-information-block_social-media svg {
+  width: 30px;
+  height: 30px;
+}
+
+.contact-information-block_social-media svg path,
+.logo-footer path {
+  fill: var(--footer-color);
+}
+
 .footer-lower-part {
   width: 100%;
   display: flex;
@@ -516,7 +605,7 @@ address {
   height: 5.682px;
   flex-shrink: 0;
   stroke-width: 2px;
-  stroke: #666;
+  stroke: var(--text-color);
   opacity: 0.3;
   margin-top: 20px;
 }
@@ -540,7 +629,7 @@ address {
 }
 
 .footer-menu-block nav ul li a {
-  color: #42446e;
+  color: var(--footer-color);
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -550,9 +639,8 @@ address {
 }
 
 .footer-menu-block_authorship_information {
-  color: #666;
+  color: var(--text-color);
   text-align: center;
-  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -565,6 +653,142 @@ address {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 420px) {
+  .main-information img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 50px;
+    font-weight: 600;
+  }
+
+  .section-title-type1,
+  .section-title-type2 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px;
+  }
+
+  .about-me-block-description p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 25px;
+  }
+
+  .experience-box {
+    height: 135px;
+  }
+
+  .tech-stack-block_icons img,
+  .tech-stack-block_icons svg {
+    width: 55px;
+    height: 55px;
+  }
+
+  .section-subtitle {
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  .tech-stack-block,
+  .projects-block {
+    margin-top: 100px;
+  }
+
+  .tech-stack-block_icons {
+    margin-top: 65px;
+  }
+
+  .projects-block_list {
+    margin-top: 70px;
+  }
+
+  .projects-block_list_item {
+    max-width: 300px;
+  }
+
+  .projects-block_list_item img {
+    width: 300px;
+    height: 210px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 26px;
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+
+  .projects-block_list_item_project-description {
+    font-size: 16px;
+    line-height: 23px;
+    width: 280px;
+    height: 130px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .projects-block_list_item_project-technologies {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 26px;
+    width: 250px;
+    margin-top: 0;
+    margin-left: 15px;
+  }
+
+  .projects-block_list_item_link-bar {
+    margin: 20px 15px 20px 20px;
+  }
+
+  .projects-block_list_item_link-bar svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .projects-block_list_item_link-bar div {
+    gap: 7px;
+  }
+
+  .projects-block_list_item_link-bar div a {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 15px;
+  }
+
+  .mail-us-block_content {
+    height: 100px;
+  }
+
+  .mail-us-block_content_text {
+    font-family: "DM Sans", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 40px;
+  }
+
+  .contact-information-block_social-media svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .contact-information-block_phone-email a {
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    text-decoration: none;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -583,6 +807,11 @@ address {
 
   .experience-box_lower-part_work-duration {
     width: 272px;
+  }
+
+  .switch.main-container {
+    height: 60px;
+    top: 0;
   }
 }
 
@@ -612,8 +841,13 @@ address {
     margin-top: 100px;
   }
 
-  .footer-img {
+  .logo-footer {
     display: none;
+  }
+
+  .switch.main-container {
+    height: 70px;
+    top: 0;
   }
 }
 
@@ -624,7 +858,7 @@ address {
 
   header {
     position: fixed;
-    background: #f0f0f0;
+    background: var(--bg-color);
     top: 0;
   }
 
@@ -633,7 +867,7 @@ address {
   }
 
   main {
-    padding-top: 120px;
+    padding-top: 130px;
   }
 
   .menu {
@@ -702,6 +936,15 @@ address {
     flex-direction: column;
   }
 
+  .switch {
+    height: 100px;
+    top: 0px;
+  }
+
+  .theme-switch {
+    right: 6px;
+  }
+
   h1 {
     text-align: center;
   }
@@ -716,7 +959,7 @@ address {
 
   .main-information {
     flex-direction: column-reverse;
-    margin-top: 70px;
+    margin-top: 50px;
     row-gap: 20px;
   }
 
@@ -743,5 +986,11 @@ address {
 
   .footer-menu-block_wrapper {
     margin-right: 60px;
+  }
+}
+
+@media only screen and (max-width: 1260px) {
+  .header_flex {
+    padding: 0;
   }
 }
